@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int i, num, f, l, m, len;
+    cout<<"Enter number of Elements: ";
+    cin >> len;
+    cout<<"Enter Elements: ";
+    int arr[len];
+    for(i=0; i<10; i++)
+        cin>>arr[i];
+    cout<<"\nEnter Element to be search: ";
+    cin>>num;
+    f = 0;
+    l = len-1;
+    m = (f+l)/2;
+    while(f <= l)
+    {
+        if(arr[m]<num)
+            f = m+1;
+        else if(arr[m]==num)
+        {
+            cout<<"\nThe number, "<<num<<" is present at position "<<m+1;
+            break;
+        }
+        else
+            l = m-1;
+        m = (f+l)/2;
+    }
+    if(f>l)
+        cout<<"\nThe number, "<<num<<" is not found in given array" << endl;
+    return 0;
+}
